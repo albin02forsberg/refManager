@@ -11,4 +11,11 @@ services:
       - "8080:8080"
     volumes:
       - ./backend/src:/backend/src
+  database:
+    build: ./database
+    ports:
+      - "5555:3060"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: refMan
     
