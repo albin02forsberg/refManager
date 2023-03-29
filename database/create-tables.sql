@@ -4,5 +4,6 @@ CREATE TABLE Person (
     lastName varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
     phone varchar(255) NOT NULL,
-    password varchar(255) NOT NULL
+    created datetime NOT NULL,
+    password varchar(255) 
 );

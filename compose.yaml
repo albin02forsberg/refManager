@@ -14,7 +14,7 @@ services:
   database:
     build: ./database
     ports:
-      - "5555:3060"
+      - "5555:3306"
     environment:
       MARIADB_ROOT_PASSWORD: root
       MARIADB_DATABASE: refMan
