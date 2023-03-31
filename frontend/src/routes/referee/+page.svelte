@@ -1,12 +1,6 @@
 <script lang="ts">
     // Define data for the table
-
-    async function getReferees() {
-        const response = await fetch("http://localhost:8080/referee");
-        const data = await response.json();
-        console.log(data);
-        return data;
-    }
+    export let data
 </script>
 
 <div class="prose mb-12">
@@ -60,14 +54,14 @@
         </tr>
     </thead>
     <tbody>
-        {#await getReferees()}
+        {#await data}
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="text-sm text-gray-900">Loading...</div>
                 </td>
             </tr>
-        {:then referees}
-            {#each referees as referee}
+        {:then data}
+            {#each data.referees as referee}
                 <tr class="hover:bg-slate-50">
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm text-gray-900">

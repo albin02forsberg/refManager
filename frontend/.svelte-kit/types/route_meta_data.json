@@ -1,3 +1,10 @@
 {
-	"/": []
+	"/": [],
+	"/referee": [
+		"src/routes/referee/+page.ts"
+	],
+	"/referee/create": [],
+	"/referee/[slug]": [
+		"src/routes/referee/[slug]/+page.ts"
+	]
 }

@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
         const rows = await conn.query("SELECT * FROM Person WHERE id = ?", [req.params.id]);
 
         conn.release();
-        res.status(200).json(rows);
+        res.status(200).json(rows[0]);
 
     } catch (err) {
         res.status(500).json({ message: "Error" });
