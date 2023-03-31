@@ -18,6 +18,21 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+    try {
+        const conn = await pool.getConnection();
+
+        const rows = await conn.query("SELECT * FROM Person WHERE id = ?", [req.params.id]);
+
+        conn.release();
+        res.status(200).json(rows);
+
+    } catch (err) {
+        res.status(500).json({ message: "Error" });
+        console.error(err);
+    }
+})
+
 router.post("/", async (req, res) => {
     console.log(req.body);
     try {

@@ -7,7 +7,6 @@
         console.log(data);
         return data;
     }
-
 </script>
 
 <div class="prose mb-12">
@@ -29,7 +28,6 @@
             Lägg till ny domare
         </button>
     </a>
-
 </div>
 
 <table class="min-w-full divide-y divide-grap-200">
@@ -70,9 +68,13 @@
             </tr>
         {:then referees}
             {#each referees as referee}
-                <tr>
+                <tr class="hover:bg-slate-50">
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-900">{referee.firstName} {referee.lastName}</div>
+                        <div class="text-sm text-gray-900">
+                            <a href="/referee/{referee.id}">
+                                {referee.firstName} {referee.lastName}
+                            </a>
+                        </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="text-sm text-gray-900">{referee.phone}</div>
