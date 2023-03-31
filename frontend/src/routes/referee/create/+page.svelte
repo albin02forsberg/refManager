@@ -4,7 +4,7 @@
     let email = "";
     let phone = "";
 
-    let errors = [];
+    let errors = []
 
     const handleSubmit = () => {
         // Handle errors

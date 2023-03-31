@@ -4,6 +4,7 @@ import cors from "cors";
 
 // Routes
 import referee from "./routes/referee.js";
+import game from "./routes/game.js";
 
 const PORT = 8080;
 
@@ -16,6 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use("/referee", referee);
+app.use("/game", game);
 
 
 app.get("/", (req, res) => {
