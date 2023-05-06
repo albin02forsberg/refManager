@@ -25,3 +25,10 @@ export async function getGames() {
 
     return games;
 }
+
+export async function getSchedules() {
+    const fetchSchedules = await fetch(`http://localhost:8080/schedule`);
+    const schedules = await fetchSchedules.json();
+
+    return schedules;
+}

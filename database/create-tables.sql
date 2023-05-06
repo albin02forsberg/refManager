@@ -28,6 +28,22 @@ CREATE TABLE Game(
     FOREIGN KEY (refereeAD2) REFERENCES Person(id)
 );
 
+CREATE TABLE Schedule(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ScheduleGame(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    schedule INTEGER NOT NULL,
+    game INTEGER NOT NULL,
+    FOREIGN KEY (schedule) REFERENCES Schedule(id),
+    FOREIGN KEY (game) REFERENCES Game(id)
+);
+
+INSERT INTO Schedule (name) VALUES ("Domarschema April 2023");
+
 INSERT INTO Team (name) VALUES ("F13");
 INSERT INTO Team (name) VALUES ("P12");
 INSERT INTO Team (name) VALUES ("P10");
