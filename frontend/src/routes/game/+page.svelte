@@ -1,5 +1,5 @@
-<script>
-    // TODO
+<script lang="ts">
+    export let data;
 </script>
 
 <div class="prose mb-12">
@@ -51,12 +51,28 @@
             >
                 AD1
             </th>
-            <th
-                scope="col"
-                class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wideer"
-            >
-                AD2
-            </th>
         </tr>
     </thead>
+    <tbody>
+        {#each data.games as game}
+            <tr class="bg-white">
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <!-- Format date to yyyy-mm-dd hh:mm -->
+                    {game.date}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {game.teamHome}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {game.teamAway}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {game.hd}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {game.ad1}
+                </td>
+            </tr>
+        {/each}
+    </tbody>
     </table>    

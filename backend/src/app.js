@@ -5,6 +5,7 @@ import cors from "cors";
 // Routes
 import referee from "./routes/referee.js";
 import game from "./routes/game.js";
+import team from "./routes/team.js";
 
 const PORT = 8080;
 
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use("/referee", referee);
 app.use("/game", game);
+app.use("/team", team);
 
 
 app.get("/", (req, res) => {

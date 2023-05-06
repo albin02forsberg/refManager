@@ -1,5 +1,6 @@
 <script lang="ts">
-    let errors = [];
+    export let data;
+    let errors: any[] = [];
     let dateTime = ""
     let team = ""
     let opponent = ""
@@ -90,9 +91,10 @@
             Lag
         </label>
         <select name="team" id="team" bind:value={team}>
-            <option value="1">Lag 1</option>
-            <option value="2">Lag 2</option>
-            <option value="3">Lag 3</option>
+            <option value="">Välj lag</option>
+            {#each data.teams as team}
+                <option value={team.id}>{team.name}</option>
+            {/each}
         </select>
     </div>
     <div class="mb-4">
